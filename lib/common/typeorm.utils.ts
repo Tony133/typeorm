@@ -18,6 +18,8 @@ import { DEFAULT_DATA_SOURCE_NAME } from '../typeorm.constants';
 const logger = new Logger('TypeOrmModule');
 
 /**
+ * @publicApi
+ * 
  * This function generates an injection token for an Entity or Repository
  * @param {EntityClassOrSchema} entity parameter can either be an Entity or Repository
  * @param {string} [dataSource='default'] DataSource name
@@ -54,6 +56,8 @@ export function getRepositoryToken(
 }
 
 /**
+ * @publicApi
+ * 
  * This function generates an injection token for an Entity or Repository
  * @param {Function} This parameter can either be an Entity or Repository
  * @returns {string} The Repository injection token
@@ -66,6 +70,8 @@ export function getCustomRepositoryToken(repository: Function): string {
 }
 
 /**
+ * @publicApi
+ * 
  * This function returns a DataSource injection token for the given DataSource, DataSourceOptions or dataSource name.
  * @param {DataSource | DataSourceOptions | string} [dataSource='default'] This optional parameter is either
  * a DataSource, or a DataSourceOptions or a string.
@@ -86,10 +92,16 @@ export function getDataSourceToken(
     : `${dataSource.name}DataSource`;
 }
 
-/** @deprecated */
+/** 
+ * @publicApi
+ *
+ * @deprecated 
+ */
 export const getConnectionToken = getDataSourceToken;
 
 /**
+ * @publicApi
+ * 
  * This function returns a DataSource prefix based on the dataSource name
  * @param {DataSource | DataSourceOptions | string} [dataSource='default'] This optional parameter is either
  * a DataSource, or a DataSourceOptions or a string.

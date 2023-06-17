@@ -1,3 +1,6 @@
+/**
+ * @publicApi
+ */
 export class CircularDependencyException extends Error {
   constructor(context?: string) {
     const ctx = context ? ` inside ${context}` : ``;

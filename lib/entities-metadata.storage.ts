@@ -3,6 +3,9 @@ import { EntityClassOrSchema } from './interfaces/entity-class-or-schema.type';
 
 type DataSourceToken = DataSource | DataSourceOptions | string;
 
+/**
+ * @publicApi
+ */
 export class EntitiesMetadataStorage {
   private static readonly storage = new Map<string, EntityClassOrSchema[]>();
 
